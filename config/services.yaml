@@ -1,0 +1,14 @@
+
+services:
+    _defaults:
+        autowire: true       # Automatically injects dependencies
+        autoconfigure: true   # Automatically tags services
+
+    MyPlugin\MyService:
+        public: true
+        tags:
+            - { name: 'wordpress.action', hook: 'init', method: 'onInit' }
+
+    MyPlugin\NewService: # New service added
+
+    MyPlugin\UtilityService:
